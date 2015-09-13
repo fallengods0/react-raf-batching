@@ -8,18 +8,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fallengods0/react-raf-batching"
+    "url": "git+https://github.com/fallengods0/react-raf-batching.git"
   },
+  "license": "Apache-2.0",
   "keywords": [
     "react",
     "requestanimationframe"
   ],
   "author": "Pete Hunt",
-  "license": "Apache 2",
   "peerDependencies": {
     "react": "~0.13.3"
   },
   "dependencies": {
     "raf": "^3.1.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/fallengods0/react-raf-batching/issues"
+  },
+  "homepage": "https://github.com/fallengods0/react-raf-batching#readme",
+  "devDependencies": {}
 }
