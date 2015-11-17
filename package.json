@@ -1,6 +1,6 @@
 {
   "name": "react-raf-batching",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "High performance batching strategy for React",
   "main": "ReactRAFBatching.js",
   "scripts": {
@@ -17,7 +17,7 @@
   ],
   "author": "Pete Hunt",
   "peerDependencies": {
-    "react": "~0.13.3"
+    "react": "~0.14.2"
   },
   "dependencies": {
     "raf": "^3.1.0"

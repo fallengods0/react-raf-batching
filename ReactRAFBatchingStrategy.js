@@ -16,7 +16,7 @@
  * @providesModule ReactRAFBatchingStrategy
  */
 
-"use strict";
+'use strict';
 
 var ReactUpdates = require('react/lib/ReactUpdates');
 var raf = require('raf');
@@ -26,6 +26,8 @@ function tick() {
   raf(tick);
 }
 
+var arraySlice = Array.prototype.slice;
+
 var ReactRAFBatchingStrategy = {
   isBatchingUpdates: true,
 
@@ -34,7 +36,7 @@ var ReactRAFBatchingStrategy = {
    * and friends are batched such that components aren't updated unnecessarily.
    */
   batchedUpdates: function(callback) {
-    callback.apply(void 0, Array.prototype.slice.call(arguments, 1));
+    callback.apply(null, arraySlice.call(arguments, 1));
   }
 };
 

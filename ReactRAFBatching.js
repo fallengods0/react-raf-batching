@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+'use strict';
+
 var ReactRAFBatchingStrategy = require('./ReactRAFBatchingStrategy');
 var ReactUpdates = require('react/lib/ReactUpdates');
 
@@ -26,4 +28,3 @@ var ReactRAFBatching = {
 };
 
 module.exports = ReactRAFBatching;
-
