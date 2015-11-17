@@ -16,21 +16,30 @@
  * @providesModule ReactRAFBatchingStrategy
  */
 
-'use strict';
+/**
+ * Imports
+ */
+import raf from 'raf';
+import ReactUpdates from 'react/lib/ReactUpdates';
 
-var ReactUpdates = require('react/lib/ReactUpdates');
-var raf = require('raf');
-
+/**
+ * Flush batched updates and setup next render.
+ */
 function tick() {
   ReactUpdates.flushBatchedUpdates();
   raf(tick);
 }
 
-var arraySlice = Array.prototype.slice;
+/**
+ * Constants.
+ */
+const arraySlice = Array.prototype.slice;
 
-var ReactRAFBatchingStrategy = {
+/**
+ * ReactRAFBatchingStrategy.
+ */
+const ReactRAFBatchingStrategy = {
   isBatchingUpdates: true,
-
   /**
    * Call the provided function in a context within which calls to `setState`
    * and friends are batched such that components aren't updated unnecessarily.
@@ -40,6 +49,12 @@ var ReactRAFBatchingStrategy = {
   }
 };
 
+/**
+ * Start rendering batches.
+ */
 raf(tick);
 
-module.exports = ReactRAFBatchingStrategy;
+/**
+ * Exports.
+ */
+export default ReactRAFBatchingStrategy;

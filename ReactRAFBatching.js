@@ -14,17 +14,22 @@
  * limitations under the License.
  */
 
-'use strict';
+/**
+ * Imports
+ */
+import ReactUpdates from 'react/lib/ReactUpdates';
+import ReactRAFBatchingStrategy from './ReactRAFBatchingStrategy';
 
-var ReactRAFBatchingStrategy = require('./ReactRAFBatchingStrategy');
-var ReactUpdates = require('react/lib/ReactUpdates');
-
-function inject() {
-  ReactUpdates.injection.injectBatchingStrategy(ReactRAFBatchingStrategy);
-}
-
-var ReactRAFBatching = {
-  inject: inject
+/**
+ * ReactRAFBatching.
+ */
+const ReactRAFBatching = {
+  inject() {
+    ReactUpdates.injection.injectBatchingStrategy(ReactRAFBatchingStrategy);
+  }
 };
 
-module.exports = ReactRAFBatching;
+/**
+ * Exports.
+ */
+export default ReactRAFBatching;
