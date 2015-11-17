@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+'use strict';
 
 /**
  * Imports
  */
-import ReactUpdates from 'react/lib/ReactUpdates';
-import ReactRAFBatchingStrategy from './ReactRAFBatchingStrategy';
+const ReactUpdates = require('react/lib/ReactUpdates');
+const ReactRAFBatchingStrategy = require('./ReactRAFBatchingStrategy');
 
 /**
  * ReactRAFBatching.
@@ -32,4 +33,4 @@ const ReactRAFBatching = {
 /**
  * Exports.
  */
-export default ReactRAFBatching;
+module.exports = ReactRAFBatching;

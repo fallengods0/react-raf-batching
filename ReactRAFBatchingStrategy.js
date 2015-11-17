@@ -15,12 +15,13 @@
  *
  * @providesModule ReactRAFBatchingStrategy
  */
+'use strict';
 
 /**
  * Imports
  */
-import raf from 'raf';
-import ReactUpdates from 'react/lib/ReactUpdates';
+const raf = require('raf');
+const ReactUpdates = require('react/lib/ReactUpdates');
 
 /**
  * Flush batched updates and setup next render.
@@ -33,7 +34,7 @@ function tick() {
 /**
  * Constants.
  */
-const arraySlice = Array.prototype.slice;
+const slice = Array.prototype.slice;
 
 /**
  * ReactRAFBatchingStrategy.
@@ -45,7 +46,7 @@ const ReactRAFBatchingStrategy = {
    * and friends are batched such that components aren't updated unnecessarily.
    */
   batchedUpdates: function(callback) {
-    callback.apply(null, arraySlice.call(arguments, 1));
+    callback.apply(null, slice.call(arguments, 1));
   }
 };
 
@@ -57,4 +58,4 @@ raf(tick);
 /**
  * Exports.
  */
-export default ReactRAFBatchingStrategy;
+module.exports = ReactRAFBatchingStrategy;
